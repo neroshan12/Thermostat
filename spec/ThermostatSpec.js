@@ -21,4 +21,11 @@ beforeEach(function() {
     thermostat.down();
     expect(thermostat.getCurrentTemperature()).toEqual(19);
   });
+
+  it("should have a minimum temperature of 10 degrees", function() {
+    for (var i = 0; i < 11; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getCurrentTemperature()).toEqual(10);
+  });
 });
