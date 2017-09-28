@@ -28,4 +28,8 @@ beforeEach(function() {
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
+
+  it("should have Power Saving Mode ON as default", function() {
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
 });

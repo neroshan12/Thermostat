@@ -3,10 +3,15 @@
 function Thermostat() {       // Created a Thermostat object constructor and gives it a property of temperature
   this.temperature = 20;
   this.MINIMUM_TEMPERATURE = 10;
+  this.powerSavingMode = true;
 };
 
 Thermostat.prototype.getCurrentTemperature = function() {   // prototype keyword to associate or bind the getCurrentTemperature function to our Thermostat
   return this.temperature;
+};
+
+Thermostat.prototype.getPowerSavingModeOn = function() {
+  return this.powerSavingMode === true;
 };
 
 Thermostat.prototype.up = function() {
@@ -23,3 +28,7 @@ Thermostat.prototype.down = function() {
 Thermostat.prototype.isMinimumTemperature = function() {
   return this.temperature === this.MINIMUM_TEMPERATURE;
 };
+
+Thermostat.prototype.switchPowerSavingModeOff = function() {
+  this.powerSavingMode = false;
+}
