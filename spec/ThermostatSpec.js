@@ -33,10 +33,24 @@ beforeEach(function() {
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
 
-  it("can switch PSM back on", function() {
+  it("can switch PSM off", function() {
     thermostat.switchPowerSavingModeOff();
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
-    thermostat.switchPowerSavingModeOn();
-    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
+});
+
+describe("when power saving mode is on", function() {
+
+  var thermostat;
+
+  beforeEach(function() {
+    thermostat = new Thermostat();
+  });
+
+  it ("has a max temperature of 25", function() {
+    for(var i = 0; i < 6; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getCurrentTemperature()).toEqual(25);
   });
 });

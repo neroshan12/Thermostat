@@ -3,6 +3,8 @@
 function Thermostat() {       // Created a Thermostat object constructor and gives it a property of temperature
   this.temperature = 20;
   this.MINIMUM_TEMPERATURE = 10;
+  this.MAX_LIMIT_PSM_ON = 25;
+  this.MAX_LIMIT_PSM_OFF = 32;
   this.powerSavingMode = true;
 };
 
@@ -15,6 +17,9 @@ Thermostat.prototype.isPowerSavingModeOn = function() {
 };
 
 Thermostat.prototype.up = function() {
+  if (this.isMaximumTemperature() {
+    return;
+  })
   this.temperature += 1;
 };
 
